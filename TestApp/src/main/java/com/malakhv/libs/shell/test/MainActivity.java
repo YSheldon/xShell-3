@@ -2,7 +2,10 @@ package com.malakhv.libs.shell.test;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import com.malakhv.shell.Shell;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private final static String TAG = "ShellTest";
@@ -22,7 +25,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         final int id = v != null ? v.getId() : 0;
 
         if (id == R.id.btn_e) {
-
+            Shell.ShellResult result = Shell.execute("ls");
+            Log.d(TAG, result.toString());
         }
 
         if (id == R.id.btn_w) {
@@ -38,7 +42,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
 
         if (id == R.id.btn_v) {
-
+            //Shell.execute("reboot");
         }
 
     }
